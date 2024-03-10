@@ -3,6 +3,7 @@ package com.example.shrimpdetector;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,12 +59,18 @@ public class InitialFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_initial, container, false);
 
+        // Set up the button
         Button button = view.findViewById(R.id.button);
-        button.setOnClickListener(view1 -> Navigation.findNavController(view1).navigate(R.id.action_initialFragment_to_questionFragment));
+        button.setOnClickListener(navigation -> {
+            // Navigate to the next destination
+            NavHostFragment.findNavController(InitialFragment.this)
+                    .navigate(R.id.action_initialFragment_to_questionFragment);
+        });
 
         return view;
     }
