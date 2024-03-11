@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_questionFragment_to_yesFragment"
             app:destination="@id/yesFragment" />
+        <action
+            android:id="@+id/action_questionFragment_to_noFragment"
+            app:destination="@id/noFragment" />
     </fragment>
     <fragment
         android:id="@+id/initialFragment"
@@ -28,4 +31,9 @@
         android:name="com.example.shrimpdetector.YesFragment"
         android:label="fragment_yes"
         tools:layout="@layout/fragment_yes" />
+    <fragment
+        android:id="@+id/noFragment"
+        android:name="com.example.shrimpdetector.NoFragment"
+        android:label="fragment_no"
+        tools:layout="@layout/fragment_no" />
 </navigation>
