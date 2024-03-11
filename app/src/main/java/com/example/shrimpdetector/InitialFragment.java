@@ -1,8 +1,9 @@
 package com.example.shrimpdetector;
 
 import android.os.Bundle;
+
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
@@ -56,6 +57,7 @@ public class InitialFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -68,10 +70,10 @@ public class InitialFragment extends Fragment {
         Button button = view.findViewById(R.id.button);
         button.setOnClickListener(navigation -> {
             // Navigate to the next destination
-            NavHostFragment.findNavController(InitialFragment.this)
+            NavHostFragment.findNavController(this)
                     .navigate(R.id.action_initialFragment_to_questionFragment);
-        });
 
+        });
         return view;
     }
 }
